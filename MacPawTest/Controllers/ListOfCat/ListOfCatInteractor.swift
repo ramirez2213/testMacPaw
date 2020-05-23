@@ -26,12 +26,11 @@ class ListOfCatInteractor: ListOfCatBusinessLogic {
         switch request {
             
         case .getList:
-            print(".getList Interactor ")
-            fetcher.getFeed { [weak self] (feedResponse) in
-                guard let feedResponse = feedResponse else {return}
-                self?.presenter?.presentData(response: ListOfCat.Model.Response.ResponseType.presentList(feed: feedResponse))
-            }
-            
+            service?.getFeed(completion: { [weak self] (feedResponse) in
+                 guard let feedResponse = feedResponse else {return}
+                 self?.presenter?.presentData(response: ListOfCat.Model.Response.ResponseType.presentList(feed: feedResponse))
+            })
+         
         }
         
     }

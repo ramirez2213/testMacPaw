@@ -1,9 +1,8 @@
-//
-//  FeedResponse.swift
-//  MacPawTest
-//
-//  Created by Konstantin Chukhas on 12.05.2020.
-//  Copyright © 2020 Konstantin Chukhas. All rights reserved.
-//
-
 import Foundation
+
+// MARK: - FeedResponseElement
+struct FeedResponse: Decodable {
+    let name: String?
+    let description: String?
+    let id: String?
+}

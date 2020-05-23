@@ -27,7 +27,7 @@ class ListOfCatViewController: UIViewController, ListOfCatDisplayLogic {
         let viewController        = self
         let interactor            = ListOfCatInteractor()
         let presenter             = ListOfCatPresenter()
-        let router                = ListOfCatRouter()
+        let router                = ListOfCatRouter(viewController: self)
         viewController.interactor = interactor
         viewController.router     = router
         interactor.presenter      = presenter
@@ -37,16 +37,20 @@ class ListOfCatViewController: UIViewController, ListOfCatDisplayLogic {
     
     // MARK: Routing
     
-    
-    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setupTableView()
+        getRequest()
+        title = "Breed List"
+    }
+    
+    fileprivate func getRequest() {
         interactor?.makeRequest(request: ListOfCat.Model.Request.RequestType.getList)
     }
+    
     
     //MARK: - setup Table View
     
@@ -76,16 +80,17 @@ extension ListOfCatViewController: UITableViewDataSource {
         cell.set(viewModel: cellListViewModel)
         return cell
     }
-    
-    
 }
 
 extension ListOfCatViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select row")
-        interactor?.makeRequest(request: .getList)
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        let cellListViewModel = listViewModel.cells[indexPath.row]
+        let id = cellListViewModel.id
+        router?.navigateToPushedViewController(value: id)
     }
 }
+
+func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 60
+}
+

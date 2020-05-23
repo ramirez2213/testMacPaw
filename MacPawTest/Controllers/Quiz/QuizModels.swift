@@ -13,17 +13,22 @@ enum Quiz {
   enum Model {
     struct Request {
       enum RequestType {
-        case some
+        case getDataForQuiz
+        case getListName
+        case sendingParametersToTheRequestForQuiz(imgId: String, value: Int)
       }
     }
     struct Response {
       enum ResponseType {
-        case some
+        case presentList(feed: FeedDetailResponse)
+        case presentBreedListName(feed: [FeedResponse])
+        case presentListForQuiz(answ: AnswerFromQuiz)
       }
     }
     struct ViewModel {
       enum ViewModelData {
-        case some
+        case detailDisplayListOfCat(feedViewModel: FeedDetailResponse)
+        case displayBreedListName(name: String)
       }
     }
   }

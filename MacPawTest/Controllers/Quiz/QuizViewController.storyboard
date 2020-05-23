@@ -1,7 +1,119 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eMF-0Q-pYy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Quiz View Controller-->
+        <scene sceneID="TeI-Tj-Bmi">
+            <objects>
+                <viewController id="eMF-0Q-pYy" customClass="QuizViewController" customModule="MacPawTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VZD-yy-ZhG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z8K-oT-l7a">
+                                <rect key="frame" x="20" y="119.5" width="374" height="358.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“Guess the breed by the photo”" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfg-L6-kB9">
+                                <rect key="frame" x="20" y="64" width="374" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EL-Hm-Wvf">
+                                <rect key="frame" x="20" y="498" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="breed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-je-6Qz">
+                                <rect key="frame" x="20" y="537" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVz-Px-FYL">
+                                <rect key="frame" x="30" y="777" width="354" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHi-32-RDR">
+                                        <rect key="frame" x="249" y="-11" width="80" height="81"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="6aQ-4p-sc4"/>
+                                            <constraint firstAttribute="width" constant="80" id="O2Z-8O-Nv6"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.3294117647" green="0.70980392160000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" backgroundImage="hand.thumbsup" catalog="system"/>
+                                        <connections>
+                                            <action selector="likeButtonAction:" destination="eMF-0Q-pYy" eventType="touchUpInside" id="tSU-yL-rHz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLi-bO-8Jo">
+                                        <rect key="frame" x="25" y="-8" width="80" height="81"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="vyS-ey-Kt1"/>
+                                            <constraint firstAttribute="width" constant="80" id="ypF-FL-Xu7"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.95377820729999996" green="0.5817558169" blue="0.50585740800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="hand.thumbsdown" catalog="system"/>
+                                        <connections>
+                                            <action selector="dislikeButtonAction:" destination="eMF-0Q-pYy" eventType="touchUpInside" id="euT-Lr-Svu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="SHi-32-RDR" firstAttribute="top" secondItem="AVz-Px-FYL" secondAttribute="top" constant="-10" id="1dI-jU-cJK"/>
+                                    <constraint firstAttribute="trailing" secondItem="SHi-32-RDR" secondAttribute="trailing" constant="25" id="9EU-7p-3oK"/>
+                                    <constraint firstAttribute="height" constant="60" id="G2V-NB-G2l"/>
+                                    <constraint firstAttribute="bottom" secondItem="uLi-bO-8Jo" secondAttribute="bottom" constant="-11" id="K5O-S1-lmD"/>
+                                    <constraint firstItem="uLi-bO-8Jo" firstAttribute="leading" secondItem="AVz-Px-FYL" secondAttribute="leading" constant="25" id="bcf-Nf-PV0"/>
+                                    <constraint firstAttribute="bottom" secondItem="SHi-32-RDR" secondAttribute="bottom" constant="-10" id="fwI-Hl-KFg"/>
+                                    <constraint firstItem="uLi-bO-8Jo" firstAttribute="top" secondItem="AVz-Px-FYL" secondAttribute="top" constant="-9" id="hFW-lA-nTb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AVz-Px-FYL" firstAttribute="centerX" secondItem="VZD-yy-ZhG" secondAttribute="centerX" id="0XV-ov-mOA"/>
+                            <constraint firstItem="jBA-Wp-QVy" firstAttribute="trailing" secondItem="z8K-oT-l7a" secondAttribute="trailing" constant="20" id="1IK-3h-uMk"/>
+                            <constraint firstItem="jBA-Wp-QVy" firstAttribute="trailing" secondItem="Pfg-L6-kB9" secondAttribute="trailing" constant="20" id="97Q-DW-FoI"/>
+                            <constraint firstItem="Pfg-L6-kB9" firstAttribute="top" secondItem="jBA-Wp-QVy" secondAttribute="top" constant="20" id="AUV-dF-q1W"/>
+                            <constraint firstItem="jBA-Wp-QVy" firstAttribute="bottom" secondItem="AVz-Px-FYL" secondAttribute="bottom" constant="25" id="BcI-VM-Zt2"/>
+                            <constraint firstItem="jBA-Wp-QVy" firstAttribute="trailing" secondItem="G3D-je-6Qz" secondAttribute="trailing" constant="20" id="Ehn-Q0-0H3"/>
+                            <constraint firstItem="z8K-oT-l7a" firstAttribute="leading" secondItem="jBA-Wp-QVy" secondAttribute="leading" constant="20" id="PVT-oG-Cxy"/>
+                            <constraint firstItem="z8K-oT-l7a" firstAttribute="height" secondItem="VZD-yy-ZhG" secondAttribute="height" multiplier="0.4" id="UBV-64-YiP"/>
+                            <constraint firstItem="G3D-je-6Qz" firstAttribute="leading" secondItem="jBA-Wp-QVy" secondAttribute="leading" constant="20" id="Y5b-X0-vio"/>
+                            <constraint firstItem="AVz-Px-FYL" firstAttribute="leading" secondItem="jBA-Wp-QVy" secondAttribute="leading" constant="30" id="ZK0-lB-Upa"/>
+                            <constraint firstItem="Pfg-L6-kB9" firstAttribute="centerX" secondItem="VZD-yy-ZhG" secondAttribute="centerX" id="g3d-1k-VTq"/>
+                            <constraint firstItem="1EL-Hm-Wvf" firstAttribute="leading" secondItem="jBA-Wp-QVy" secondAttribute="leading" constant="20" id="gWw-tm-deG"/>
+                            <constraint firstItem="G3D-je-6Qz" firstAttribute="top" secondItem="1EL-Hm-Wvf" secondAttribute="bottom" constant="15" id="ndE-GS-ltb"/>
+                            <constraint firstItem="z8K-oT-l7a" firstAttribute="centerX" secondItem="VZD-yy-ZhG" secondAttribute="centerX" id="ntw-Jr-qoh"/>
+                            <constraint firstItem="1EL-Hm-Wvf" firstAttribute="top" secondItem="z8K-oT-l7a" secondAttribute="bottom" constant="20" id="s0h-HQ-ywX"/>
+                            <constraint firstItem="jBA-Wp-QVy" firstAttribute="trailing" secondItem="1EL-Hm-Wvf" secondAttribute="trailing" constant="20" id="tlC-Ay-fR0"/>
+                            <constraint firstItem="jBA-Wp-QVy" firstAttribute="trailing" secondItem="AVz-Px-FYL" secondAttribute="trailing" constant="30" id="uOl-Zu-hpQ"/>
+                            <constraint firstItem="z8K-oT-l7a" firstAttribute="top" secondItem="Pfg-L6-kB9" secondAttribute="bottom" constant="30" id="wiC-N3-d0k"/>
+                            <constraint firstItem="Pfg-L6-kB9" firstAttribute="leading" secondItem="jBA-Wp-QVy" secondAttribute="leading" constant="20" id="xUS-Ga-ETV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jBA-Wp-QVy"/>
+                    </view>
+                    <connections>
+                        <outlet property="breedLabel" destination="G3D-je-6Qz" id="SeL-fO-YMP"/>
+                        <outlet property="dislikeButton" destination="uLi-bO-8Jo" id="uZq-lV-hhU"/>
+                        <outlet property="imageView" destination="z8K-oT-l7a" id="e5D-9u-yd4"/>
+                        <outlet property="likeButton" destination="SHi-32-RDR" id="p6R-jX-M4H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tr5-4y-wHh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="307.24637681159425" y="289.28571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hand.thumbsdown" catalog="system" width="128" height="128"/>
+        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
+    </resources>
 </document>

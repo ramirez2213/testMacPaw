@@ -11,7 +11,7 @@ import UIKit
 protocol ListCellViewModel {
     var title: String { get }
     var subtitle: String { get }
-
+    var id: String { get }
 }
 
 class ListOfCatCell: UITableViewCell {

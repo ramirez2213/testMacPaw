@@ -7,3 +7,14 @@
 //
 
 import Foundation
+ 
+struct API {
+//    https://api.thecatapi.com/v1/breeds
+    
+    static let scheme = "https"
+    static let host = "api.thecatapi.com"
+    static let breeds = "/v1/breeds"
+    static let searchImage = "/v1/images/search"
+    static let votes = "/v1/votes"
+    
+}

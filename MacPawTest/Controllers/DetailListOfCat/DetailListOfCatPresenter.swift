@@ -17,6 +17,14 @@ class DetailListOfCatPresenter: DetailListOfCatPresentationLogic {
   
   func presentData(response: DetailListOfCat.Model.Response.ResponseType) {
   
+    switch response {
+    
+    case .presentList(feed: let feed):
+        
+        viewController?.displayData(viewModel: DetailListOfCat.Model.ViewModel.ViewModelData.detailDisplayListOfCat(feedViewModel: feed))
+    }
   }
+    
+    
   
 }

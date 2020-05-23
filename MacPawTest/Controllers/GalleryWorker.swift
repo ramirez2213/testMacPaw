@@ -9,5 +9,19 @@
 import UIKit
 
 class GalleryService {
-
+    
+    var networking: Networking
+    var fetcher: DataFetcher
+    
+    init() {
+        self.networking = NetworkService()
+        self.fetcher = NetworkDataFetcher(networking: networking)
+    }
+    
+    func getImage(params: [String : Any], complition: @escaping ([ImageResponse]) -> Void) {
+        fetcher.getImage(params: params) { (imageResponse) in
+            guard let imageResponse = imageResponse else {return}
+            complition(imageResponse)
+        }
+    }
 }

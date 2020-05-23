@@ -13,19 +13,29 @@ enum Gallery {
   enum Model {
     struct Request {
       enum RequestType {
-        case some
+        case getImageNextBatch(page: String)
       }
     }
     struct Response {
       enum ResponseType {
-        case some
+        case presentImageNextBatch(list: [ImageResponse])
       }
     }
     struct ViewModel {
       enum ViewModelData {
-        case some
+        case getImageURLStringNextBatch(galleryViewModel: [GalleryViewModel.Cell])
       }
     }
   }
   
+}
+
+struct GalleryViewModel {
+    struct Cell: GalleryCellViewModel {
+        var id: String
+        var url: String
+        var width: Int
+        var height: Int
+    }
+    var cells: [Cell]
 }

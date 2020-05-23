@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct AnswerFromQuiz: Decodable {
+    let id: Int?
+    let message: String?
+}

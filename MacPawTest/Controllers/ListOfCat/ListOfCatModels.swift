@@ -14,6 +14,7 @@ enum ListOfCat {
     struct Request {
       enum RequestType {
         case getList
+        
       }
     }
     struct Response {
@@ -34,6 +35,7 @@ struct ListViewModel {
     struct Cell:ListCellViewModel {
         var title: String
         var subtitle: String
+        var id: String
     }
     let cells: [Cell]
 }

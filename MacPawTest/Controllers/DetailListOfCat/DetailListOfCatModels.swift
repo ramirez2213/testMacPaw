@@ -9,23 +9,32 @@
 import UIKit
 
 enum DetailListOfCat {
-   
-  enum Model {
-    struct Request {
-      enum RequestType {
-        case some
-      }
+    
+    enum Model {
+        struct Request {
+            enum RequestType {
+                case getDetailList(id: String)
+            }
+        }
+        struct Response {
+            enum ResponseType {
+                case presentList(feed: FeedDetailResponse)
+                
+            }
+        }
+        struct ViewModel {
+            enum ViewModelData {
+                case detailDisplayListOfCat(feedViewModel: FeedDetailResponse)
+            }
+        }
     }
-    struct Response {
-      enum ResponseType {
-        case some
-      }
-    }
-    struct ViewModel {
-      enum ViewModelData {
-        case some
-      }
-    }
-  }
-  
+    
+}
+
+struct DetailModel {
+    var lifeSpan: String
+    var temperament: String
+    var name: String
+    var description: String
+    var url: String
 }
